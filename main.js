@@ -1,5 +1,40 @@
+// Creación de DOM en proceso (aún no está terminado, solo en fase inicial)
+const vuelos = [ //uso del array
+      { origen: "Madrid", destino: "Barcelona", fecha: "2023-07-15", precio: 150 },
+      { origen: "París", destino: "Londres", fecha: "2023-07-20", precio: 200 },
+      { origen: "Nueva York", destino: "Los Ángeles", fecha: "2023-07-18", precio: 300 },
+];
+const buscarVuelos = (origen, destino, fecha) =>
+    vuelos.filter(vuelo => //uso del filter
+        vuelo.origen.toLowerCase() === origen.toLowerCase() &&
+        vuelo.destino.toLowerCase() === destino.toLowerCase() &&
+        vuelo.fecha === fecha
+    );
+const mostrar_resultados = vuelos => {
+    const lista_resultados = document.getElementById("resultados");
+    lista_resultados.innerHTML = " ";
+    if (vuelos.length === 0) {
+        lista_resultados.textContent = "No se encontraron vuelos para los criterios seleccionados." ;
+    } 
+    else {
+        vuelos.forEach(vuelo => {
+            const vueloElement = document.createElement('div');
+            vueloElement.innerHTML = `Origen: ${vuelo.origen}, Destino: ${vuelo.destino}, Fecha: ${vuelo.fecha}, Precio: ${vuelo.precio}`;
+            lista_resultados.appendChild(vueloElement);
+        });
+    }
+};
+document.getElementById("formulario").addEventListener("submit", event => {
+    event.preventDefault();
+    const origen = document.getElementById("origen").value;
+    const destino = document.getElementById("destino").value;
+    const fecha = document.getElementById("fecha").value;
+    const vuelosFiltrados = buscarVuelos(origen, destino, fecha);
+    mostrar_resultados(vuelosFiltrados);
+});
+
 //Compra de tiquete de un avión
-function resumen() {
+function resumen(callback) {
     console.log("RESUMEN DE VUELO SELECCIONADO: ");
     console.log(" ");
     console.log("VUELO DE IDA");
@@ -12,7 +47,7 @@ function resumen() {
     console.log("Aeropuerto de Cartagena (CAG) 8:30 -->  Aeropuerto El Dorado (BAQ) 11:15");
     console.log("Aerolínea: Vueling");
     console.log(" ");
-    console.log("Precio tiquete: $2.271.670");
+    callback();
     console.log("_____________________________________________");
     console.log(" ");
 }
@@ -38,7 +73,7 @@ function obtener_cantidad_pasajeros() {
 function datos_pasajeros(numero_pasajeros) {
     console.log("RESUMEN DE PASAJEROS");
     console.log(" ");
-    const nombres_pasajeros = [];
+    const nombres_pasajeros = [];  //array, lista de nombres
     class Pasajero {
         constructor() {
             this.nombre = prompt("Ingrese nombre(s) del pasajero");
@@ -90,6 +125,8 @@ function factura_electronica(numero_pasajeros) {
 }
 
 //Proceso de pago
+let titular;
+let numero_titular;
 function proceso_de_pago() {
     class Tarjeta {
         constructor() {
@@ -97,6 +134,8 @@ function proceso_de_pago() {
             this.vencimiento = Number(prompt("Ingrese año de vencimiento de la tarjeta"));
             this.nombre_titular = prompt("Ingrese el nombre del titular de la tarjeta");
             let repeticion = true;
+            titular = nombres_pasajeros.find(nombre_pasajero => nombre_pasajero === this.nombre_titular);
+            numero_titular = nombres_pasajeros.findIndex(nombre_pasajero => nombre_pasajero === this.nombre_titular);;
             while (repeticion){
                 this.correo = prompt("Ingrese la dirección de correo electrónico asociada");
                 if (this.correo.includes("@") && this.correo.includes(".com")) {
@@ -140,11 +179,15 @@ function reserva(numero_pasajeros, nombres_pasajeros){
         console.log("   * "+ nombres_pasajeros[contador]);
     }
     console.log("Tarifa Básica");
+    let corrector_numero_titular = numero_titular+1;
+    console.log("Titular: " + titular + " - Pasajero No. " + corrector_numero_titular);
     console.log("______________________________");
 }
 
 //Llamado de las funciones
-resumen();
+resumen(function() {
+    console.log("Precio tiquete: $2.271.670");
+});
 let numero_pasajeros = obtener_cantidad_pasajeros();
 let nombres_pasajeros = datos_pasajeros(numero_pasajeros);
 alert("Rectifique que los datos introducidos de los pasajeros en la consola son correctos");
