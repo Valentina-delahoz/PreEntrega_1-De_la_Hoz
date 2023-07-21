@@ -1,38 +1,28 @@
-// Creación de DOM en proceso (aún no está terminado, solo en fase inicial)
-const vuelos = [ //uso del array
-      { origen: "Madrid", destino: "Barcelona", fecha: "2023-07-15", precio: 150 },
-      { origen: "París", destino: "Londres", fecha: "2023-07-20", precio: 200 },
-      { origen: "Nueva York", destino: "Los Ángeles", fecha: "2023-07-18", precio: 300 },
-];
-const buscarVuelos = (origen, destino, fecha) =>
-    vuelos.filter(vuelo => //uso del filter
-        vuelo.origen.toLowerCase() === origen.toLowerCase() &&
-        vuelo.destino.toLowerCase() === destino.toLowerCase() &&
-        vuelo.fecha === fecha
-    );
-const mostrar_resultados = vuelos => {
-    const lista_resultados = document.getElementById("resultados");
-    lista_resultados.innerHTML = " ";
-    if (vuelos.length === 0) {
-        lista_resultados.textContent = "No se encontraron vuelos para los criterios seleccionados." ;
-    } 
-    else {
-        vuelos.forEach(vuelo => {
-            const vueloElement = document.createElement('div');
-            vueloElement.innerHTML = `Origen: ${vuelo.origen}, Destino: ${vuelo.destino}, Fecha: ${vuelo.fecha}, Precio: ${vuelo.precio}`;
-            lista_resultados.appendChild(vueloElement);
-        });
-    }
-};
-document.getElementById("formulario").addEventListener("submit", event => {
-    event.preventDefault();
-    const origen = document.getElementById("origen").value;
-    const destino = document.getElementById("destino").value;
-    const fecha = document.getElementById("fecha").value;
-    const vuelosFiltrados = buscarVuelos(origen, destino, fecha);
-    mostrar_resultados(vuelosFiltrados);
-});
+function Ir_seleccion() {
+    const origen = document.getElementById('origen').value;
+    const destino = document.getElementById('destino').value;
+    const fecha_ida = document.getElementById('fecha_ida').value;
+    const fecha_regreso = document.getElementById('fecha_regreso').value;
+    const numero_pasajeros = document.getElementById('numero_pasajeros').value;
+    
+    console.log(origen);
+    console.log(destino);
+    console.log(fecha_ida);
+    console.log(fecha_regreso);
 
+    if (origen.trim() !== "" && destino.trim() !== "" && fecha_ida.trim() !== "" && numero_pasajeros.trim() !== "") {
+        const formulario = document.getElementById('formulario');
+        localStorage.setItem('origen', origen);
+        localStorage.setItem('destino', destino);
+        localStorage.setItem('fecha_ida', fecha_ida);
+        localStorage.setItem('fecha_regreso', fecha_regreso);
+        localStorage.setItem('numero_pasajeros', numero_pasajeros);
+        formulario.action = "http://127.0.0.1:5501/pages/seleccion.html";
+        formulario.submit();
+    } 
+    else {}
+}
+/*
 //Compra de tiquete de un avión
 function resumen(callback) {
     console.log("RESUMEN DE VUELO SELECCIONADO: ");
@@ -195,3 +185,4 @@ factura_electronica(numero_pasajeros);
 proceso_de_pago();
 reserva(numero_pasajeros, nombres_pasajeros);
 alert("¡Su reserva se ha generado en la consola correctamente!");
+*/

@@ -1,0 +1,200 @@
+body{
+    background-image: url("../images/fondo_intro_inicio.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+#formulario {
+    max-width: 400px;
+    margin-top: 10%;
+    margin-left: 60%;
+    padding: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+}
+#contenedor_1{
+    width: 100%;
+}
+#formulario input[type="text"],
+#formulario input[type="date"],
+#formulario button, 
+#formulario input[type="number"] {
+    width: 100%;
+    height: 40px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    color: grey;
+}
+#formulario #contenedor_1 .texto{
+    font-family: Arial, sans-serif;
+    color: rgb(20, 19, 31);
+    margin-top: 10px;
+}
+#formulario button {
+    background-color: #f96c00;
+    margin-top: 30px;
+    color: white;
+    cursor: pointer;
+} 
+#resultados {
+    margin-top: 20px;
+}
+#resultados div {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+/* Seleccion */
+.navbar {
+  background-color: white;
+  padding: 25px;
+}
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.nav-list li {
+  margin-right: 20px;
+}
+.nav-list li:last-child {
+  margin-right: 0;
+}
+.nav-list li a {
+    color: #5a5a5a;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.nav-list li a.activado{
+    color: white;
+    background-color: #f96c00;
+  }
+.nav-list li a.activado:hover {
+  background-color: #ccc;
+}
+#contenedor_3{
+    width: 100%;
+    display: block;
+}
+#contenedor_3 #contenedor_4, #contenedor_5{
+    width: 80%;
+    margin-left: 10%;
+}
+#contenedor_3 #contenedor_4 .titulo, #contenedor_5 .titulo{
+    font-family: Arial, sans-serif;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(73, 72, 72, 0.5);
+    margin-top: 50px;
+}
+#contenedor_3 #contenedor_4 .contenedor_vuelo {  
+    display: grid;
+    grid-template-columns: 15% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25%;
+    grid-auto-columns: 1fr;
+    gap: 0px 26px;
+    padding: 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "texto_lugar_ida . texto_lugar_regreso ."
+      ". tiempo . precio"
+      "hora_ida . hora_regreso .";
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#contenedor_3 #contenedor_4 .contenedor_vuelo:hover{
+    background-color: rgb(248, 217, 177);
+}
+#contenedor_3 #contenedor_5 .contenedor_vuelo:hover{
+    background-color: rgb(248, 217, 177);
+}
+#contenedor_3 #contenedor_5 .contenedor_vuelo {  
+    display: grid;
+    grid-template-columns: 15% 25% 25% 25%;
+    grid-template-rows: 25% 25% 25%;
+    grid-auto-columns: 1fr;
+    gap: 0px 26px;
+    padding: 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "texto_lugar_regreso . texto_lugar_ida ."
+      ". tiempo . precio"
+      "hora_ida . hora_regreso .";
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      background-color: white;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+}
+  .texto_lugar_ida { 
+    grid-area: texto_lugar_ida; 
+    font-size: medium;
+    color: #5a5a5a;
+}
+  .tiempo { 
+    grid-area: tiempo; 
+    color: #5a5a5a;
+    font-size: small;
+}
+  .hora_ida { 
+    grid-area: hora_ida; 
+    font-size: x-large;
+    font-weight: bold;
+    color: #3d3c3c;
+}
+  .texto_lugar_regreso { 
+    grid-area: texto_lugar_regreso; 
+    font-size: medium;
+    color: #5a5a5a;
+}
+  .hora_regreso { 
+    grid-area: hora_regreso; 
+    font-size: x-large;
+    font-weight: bold;
+    color: #3d3c3c;
+}
+  .precio { 
+    grid-area: precio; 
+    font-size: x-large;
+    font-weight: bold;
+    color: #3d3c3c;
+}
+#contenedor_3 #contenedor_6 {
+    display: flex;
+    justify-content: center;
+}
+#contenedor_3 #contenedor_6 button{
+    color: white;
+    background-color: rgb(255, 225, 1);
+    border: none;
+    padding: 20px 15px;
+    border-radius: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 30%;
+    
+}
+#contenedor_3 #contenedor_6 button a{
+    font-family: Arial, sans-serif;
+    color: #3d3c3c;
+    text-decoration: none;
+    font-size: large;
+}

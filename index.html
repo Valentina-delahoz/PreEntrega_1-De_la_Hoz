@@ -4,17 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Compra de tiquete</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Air Dream</title>
 </head>
 <body>
     <form id="formulario">
-        <input type="text" id="origen" placeholder="Origen">
-        <input type="text" id="destino" placeholder="Destino">
-        <input type="date" id="fecha">
-        <button type="submit">Buscar</button>
+        <div id="contenedor_1">
+            <div class="texto">Lugar</div>
+            <input type="text" id="origen" placeholder="   ¿De dónde vienes?" required>
+            <input type="text" id="destino" placeholder="   ¿A dónde vas?" required>
+            <div class="texto">Fecha de ida</div>
+            <input type="date" id="fecha_ida" required>
+            <div class="texto">Fecha de regreso</div>
+            <input type="date" id="fecha_regreso" required>
+            <div class="texto">Número de pasajeros</div>
+            <input type="number" id="numero_pasajeros" min="1" step="1" required>
+            <button onclick="Ir_seleccion()">Buscar vuelo</button>
+        </div>
     </form>
-    <div id="resultados"></div>
-    <script src="main.js" ></script>
+    <script src="js/main.js" ></script>
 </body>
 </html>
