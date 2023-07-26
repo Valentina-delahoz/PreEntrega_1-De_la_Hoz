@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <title>Air Dream - Personalización</title>
 </head>
@@ -12,7 +14,7 @@
     <ul class="nav-list">
       <li><a class="activado" href="../pages/seleccion.html">1. Selección</a></li>
       <li><a class="activado" href="../pages/personalizacion.html">2. Personalización</a></li>
-      <li><a class="desactivado" href="">3. Pago</a></li>
+      <li><a class="desactivado" href="#" onclick="return false;">3. Pago</a></li>
     </ul>
   </nav>
   <div id="contenedor_3">
@@ -34,45 +36,52 @@
                 <input type="text" id="identidad_pasajero" required>
                 <label for="telefono">Teléfono / Phone:</label>
                 <input type="tel" id="telefono" required>
-                <div class="contenedor_boton"><button type="submit">Guardar</button></div>
+                <div class="contenedor_boton_guardado"><button type="submit">Guardar</button></div>
             </form>
         </div>
-        <h2><div class="titulo">Servicios adicionales</div></h2>
-        <div class="contenedor_opciones">
-            <div class="box_1">
-                <img src="../images/abordaje_prioritario.png" alt="Silla de ruedas" width="140px">
-                <div class="descripcion">Abordaje prioritario</div>
-                <div class="precio">$82.000 COP</div>
-                <div class="contenedor_boton"><button type="submit">Añadir</button></div>
-            </div>
-            <div class="box_2">
-                <img src="../images/eleccion_asiento.png" alt="Sillas de avión" width="160px">
-                <div class="descripcion">Seleccionar asientos</div>
-                <div class="precio">$54.000 COP</div>
-                <div class="contenedor_boton"><button type="submit">Añadir</button></div>
-            </div>
-            <div class="box_3">
-                <img src="../images/equipaje_adicional.png" alt="Maleta de bodega">
-                <div class="descripcion">Añadir equipaje de bodega</div>
-                <div class="precio">$105.000 COP</div>
-                <div class="contenedor_boton"><button type="submit">Añadir</button></div>
+        <div id="seccion_adicionales">
+            <h2><div class="titulo">Servicios adicionales</div></h2>
+            <div class="contenedor_opciones">
+                <div class="box_1">
+                    <img src="../images/abordaje_prioritario.png" alt="Silla de ruedas" width="140px">
+                    <div class="descripcion">Abordaje prioritario</div>
+                    <div class="precio">$82000 COP</div>
+                    <div class="contenedor_boton"><button type="submit">Añadir</button></div>
+                </div>
+                <div class="box_2">
+                    <img src="../images/eleccion_asiento.png" alt="Sillas de avión" width="160px">
+                    <div class="descripcion">Seleccionar asientos</div>
+                    <div class="precio">$54000 COP</div>
+                    <div class="contenedor_boton"><button type="submit">Añadir</button></div>
+                </div>
+                <div class="box_3">
+                    <img src="../images/equipaje_adicional.png" alt="Maleta de bodega">
+                    <div class="descripcion">Añadir equipaje de bodega</div>
+                    <div class="precio">$105000 COP</div>
+                    <div class="contenedor_boton"><button type="submit">Añadir</button></div>
+                </div>
             </div>
         </div>
-    </div>
     <div class="info_pie_pagina">
         <div class="resumen_detalles_vuelo">
             <h2>Detalles del vuelo</h2>
-            <div class="origen">Origen: ${origen}</div>
-            <div class="destino">Destino: ${destino}</div>
-            <p>Trayecto ida y vuelta</p>
+            <div class="texto_lugar_ida1"></div>
+            <div class="hora_ida1"></div>
+            <p> </p>
+            <div 
+            class="texto_lugar_regreso1"></div>
+            <div class="hora_regreso2"></div>
+            <p>Vuelos AD8237 - AD844</p>
         </div>
         <div class="resumen_precio">
             <h2>A pagar</h2>
-            <div class="monto">Tarifa aérea: ${tarifa}</div>
-            <div class="impuestos">Impuestos y tasas: ${impuestos}</div>
-            <div class="total">Total a pagar: ${total}</div>
-            <p>*Este sería un monto estimado teniendo en cuenta las conversiones a monedas y divisas extranjeras en tiempo real.</p>
-        </div>
+            <p>Tarifa aérea:</p>
+            <div class="tarifa" id="tarifaPrecio"></div>
+            <p>Impuestos y tasas:</p>
+            <div class="impuestos" id="impuestosPrecio"></div>
+            <p>Total a pagar:</p>
+            <div class="total" id="totalPrecio"></div>
+          </div>
     </div>
   </div>
   <script src="../js/personalizacion.js" ></script>

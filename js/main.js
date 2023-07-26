@@ -21,8 +21,7 @@ function Ir_seleccion() {
     } 
     else {}
 }
-/*
-
+/* En revizión (No cuenta para esta entrega)
 
 //Factura electrónica
 function factura_electronica(numero_pasajeros) {

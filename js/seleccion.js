@@ -1,5 +1,5 @@
 
-// Tomar datos de origen y destino, almacenarlos y guardarlos con capitalización.
+// Tomo los datos de origen y destino, almaceno y guardo con capitalización.
 function mostrarSweetAlert() {
     Swal.fire('Debe seleccionar ambos vuelos antes de continuar.');
 }
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// 
+// funciones seleccion_1 y seleccion_2
 let divSeleccionado_1 = null;
 let divSeleccionado_2 = null;
 
@@ -32,18 +32,23 @@ function seleccion_1(elemento, contenedor_Id1) {
 
   const divSeleccionadoData = {
     hora_ida: elemento.querySelector(".hora_ida").textContent,
-    hora_regreso: elemento.querySelector(".hora_regreso").textContent,
-    precio: elemento.querySelector(".precio").textContent,
-    //
-  };
 
+    hora_regreso: elemento.querySelector(".hora_regreso").textContent,
+
+    precio: elemento.querySelector(".precio").textContent,
+
+    texto_lugar_ida: elemento.querySelector(".texto_lugar_ida").textContent,
+
+    texto_lugar_regreso: elemento.querySelector(".texto_lugar_regreso").textContent,
+
+    tiempo: elemento.querySelector(".tiempo").textContent,
+  };
   localStorage.setItem('divSeleccionadoId_1', divId);
   localStorage.setItem('divSeleccionadoData_1', JSON.stringify(divSeleccionadoData));
 
   const seccion_destino = document.getElementById('contenedor_5');
   seccion_destino.scrollIntoView({ behavior: 'smooth' });
 }
-
 function seleccion_2(elemento, contenedor_Id2) {
   const divId = elemento.id;
   if (divSeleccionado_2) {
@@ -56,10 +61,18 @@ function seleccion_2(elemento, contenedor_Id2) {
 
   const divSeleccionadoData = {
     hora_ida: elemento.querySelector(".hora_ida").textContent,
-    hora_regreso: elemento.querySelector(".hora_regreso").textContent,
-    precio: elemento.querySelector(".precio").textContent,
-  };
 
+    hora_regreso: elemento.querySelector(".hora_regreso").textContent,
+
+    precio: elemento.querySelector(".precio").textContent,
+
+    texto_lugar_ida: elemento.querySelector(".texto_lugar_ida").textContent,
+
+    texto_lugar_regreso: elemento.querySelector(".texto_lugar_regreso").textContent,
+
+    tiempo: elemento.querySelector(".tiempo").textContent,
+
+  };
   localStorage.setItem('divSeleccionadoId_2', divId);
   localStorage.setItem('divSeleccionadoData_2', JSON.stringify(divSeleccionadoData));
 
@@ -67,10 +80,12 @@ function seleccion_2(elemento, contenedor_Id2) {
   seccion_destino.scrollIntoView({ behavior: 'smooth' });
 }
 
-//Redireccionamiento:
+//Redireccionamiento a la siguiente página
 function Ir_personalizacion() {
     const divSeleccionadoId_1 = localStorage.getItem('divSeleccionadoId_1');
+
     const divSeleccionadoDataJSON_1 = localStorage.getItem('divSeleccionadoData_1');
+
     const divSeleccionadoData_1 = JSON.parse(divSeleccionadoDataJSON_1);
   
     const divSeleccionadoId_2 = localStorage.getItem('divSeleccionadoId_2');
@@ -83,9 +98,8 @@ function Ir_personalizacion() {
       mostrarSweetAlert();
     }
   }
-  
 
-//Información:
+//Información con la que toman los datos los contenedores de vuelo:
 const datos_vuelo_tiempo = [
     { tiempo: "5h 20 mins" },
     { tiempo: "4h 40 mins" },
@@ -101,7 +115,6 @@ const tiempo = document.getElementsByClassName("tiempo");
 for (let i = 0; i < tiempo.length; i++) {
 tiempo[i].textContent = datos_vuelo_tiempo[i].tiempo;
 }
-
 const datos_vuelo_hora_ida = [
     { hora_ida: "23:50" },
     { hora_ida: "11:30" },
@@ -117,7 +130,6 @@ const hora_ida = document.getElementsByClassName("hora_ida");
 for (let i = 0; i < hora_ida.length; i++) {
 hora_ida[i].textContent = datos_vuelo_hora_ida[i].hora_ida;
 }
-
 const datos_vuelo_hora_regreso = [
     { hora_regreso: "05:10" },
     { hora_regreso: "16:10" },
@@ -133,17 +145,16 @@ const hora_regreso = document.getElementsByClassName("hora_regreso");
 for (let i = 0; i < hora_regreso.length; i++) {
 hora_regreso[i].textContent = datos_vuelo_hora_regreso[i].hora_regreso;
 }
-
 const datos_vuelo_precio = [
-    { precio: "2.345.213 COP" },
-    { precio: "2.408.200 COP" },
-    { precio: "3.100.960 COP" },
-    { precio: "3.100.960 COP" },
-    { precio: "2.345.213 COP" },
-    { precio: "2.408.200 COP" },
-    { precio: "3.100.960 COP" },
-    { precio: "3.100.960 COP" },
-    { precio: "3.200.960 COP" }
+    { precio: "2345213 COP" },
+    { precio: "2408200 COP" },
+    { precio: "3100960 COP" },
+    { precio: "3100960 COP" },
+    { precio: "2345213 COP" },
+    { precio: "2408200 COP" },
+    { precio: "3100960 COP" },
+    { precio: "3100960 COP" },
+    { precio: "3200960 COP" }
   ];
 const precio = document.getElementsByClassName("precio");
 for (let i = 0; i < precio.length; i++) {
