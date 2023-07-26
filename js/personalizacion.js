@@ -1,13 +1,3 @@
-const numero_pasajeros_perso = parseInt(localStorage.getItem('numero_pasajeros'));
-
-const contenedor_datos_pasajeros = document.getElementById('contenedor_datos_pasajeros');
-
-for (let i = 0; i < numero_pasajeros_perso; i++) {
-    const divRepetido = document.createElement('div');
-    divRepetido.className = 'div-repetido';
-    contenedor_datos_pasajeros.appendChild(divRepetido);
-}
-
 const formulario = document.getElementById('formulario');
 
 formulario.addEventListener('submit', function(event) {

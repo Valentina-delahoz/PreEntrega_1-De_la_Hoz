@@ -1,5 +1,8 @@
 
 // Tomar datos de origen y destino, almacenarlos y guardarlos con capitalización.
+function mostrarSweetAlert() {
+    Swal.fire('Debe seleccionar ambos vuelos antes de continuar.');
+}
 document.addEventListener('DOMContentLoaded', function() {
     const origen = localStorage.getItem('origen');
     const destino = localStorage.getItem('destino');
@@ -66,33 +69,21 @@ function seleccion_2(elemento, contenedor_Id2) {
 
 //Redireccionamiento:
 function Ir_personalizacion() {
-  const divSeleccionadoId_1 = localStorage.getItem('divSeleccionadoId_1');
-  const divSeleccionadoDataJSON_1 = localStorage.getItem('divSeleccionadoData_1');
-  const divSeleccionadoData_1 = JSON.parse(divSeleccionadoDataJSON_1);
-
-  const divSeleccionadoId_2 = localStorage.getItem('divSeleccionadoId_2');
-  const divSeleccionadoDataJSON_2 = localStorage.getItem('divSeleccionadoData_2');
-  const divSeleccionadoData_2 = JSON.parse(divSeleccionadoDataJSON_2);
-
-  if (divSeleccionadoId_1 && divSeleccionadoData_1 && divSeleccionadoId_2 && divSeleccionadoData_2) {
-    
-    console.log('ID del div seleccionado 1:', divSeleccionadoId_1);
-    console.log('Hora de ida del div seleccionado 1:', divSeleccionadoData_1.hora_ida);
-    console.log('Hora de regreso del div seleccionado 1:', divSeleccionadoData_1.hora_regreso);
-    console.log('precio del div seleccionado 1:', divSeleccionadoData_1.precio);
-    console.log('ID del div seleccionado 2:', divSeleccionadoId_2);
-    console.log('Hora de ida del div seleccionado 2:', divSeleccionadoData_2.hora_ida);
-    console.log('Hora de regreso del div seleccionado 2:', divSeleccionadoData_2.hora_regreso);
-    console.log('precio del div seleccionado 2:', divSeleccionadoData_2.precio);
-    
-    setTimeout(function() {
-        window.location.href = "http://127.0.0.1:5501/pages/personalizacion.html";
-      });
-  } 
-    else {
-        alert("Debe seleccionar ambos vuelos antes de continuar.");
+    const divSeleccionadoId_1 = localStorage.getItem('divSeleccionadoId_1');
+    const divSeleccionadoDataJSON_1 = localStorage.getItem('divSeleccionadoData_1');
+    const divSeleccionadoData_1 = JSON.parse(divSeleccionadoDataJSON_1);
+  
+    const divSeleccionadoId_2 = localStorage.getItem('divSeleccionadoId_2');
+    const divSeleccionadoDataJSON_2 = localStorage.getItem('divSeleccionadoData_2');
+    const divSeleccionadoData_2 = JSON.parse(divSeleccionadoDataJSON_2);
+  
+    if (divSeleccionadoId_1 && divSeleccionadoData_1 && divSeleccionadoId_2 && divSeleccionadoData_2) {
+      window.location.href = "http://127.0.0.1:5501/pages/personalizacion.html";
+    } else {
+      mostrarSweetAlert();
     }
-}
+  }
+  
 
 //Información:
 const datos_vuelo_tiempo = [

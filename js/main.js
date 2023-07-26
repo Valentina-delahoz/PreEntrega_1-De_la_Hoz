@@ -1,4 +1,5 @@
 function Ir_seleccion() {
+    localStorage.clear();
     const origen = document.getElementById('origen').value;
     const destino = document.getElementById('destino').value;
     const fecha_ida = document.getElementById('fecha_ida').value;
