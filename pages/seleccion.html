@@ -10,92 +10,92 @@
 <body>
   <nav class="navbar">
     <ul class="nav-list">
-      <li><a class="activado" href="../pages/seleccion.html">1. Selección</a></li>
-      <li><a class="desactivado" href="">2. Personalización</a></li>
-      <li><a class="desactivado" href="">3. Pago</a></li>
+        <li><a class="activado" href="../pages/seleccion.html">1. Selección</a></li>
+        <li><a class="desactivado" href="#" onclick="return false;">2. Personalización</a></li>
+        <li><a class="desactivado" href="#" onclick="return false;">3. Pago</a></li>
     </ul>
   </nav>
     <div id="contenedor_3">
         <div id="contenedor_4">
             <h2><div class="titulo">Seleccione vuelo de ida</div></h2>
-            <div class="contenedor_vuelo" onclick="cambiarColor(this, 'contenedor_5')">
+            <div class="contenedor_vuelo" onclick="seleccion_1(this, 'contenedor_vuelo_1')" id="contenedor_vuelo_1">
                 <div class="texto_lugar_ida"></div>
-                <div class="tiempo">------- <img src="../images/icono_avion.png" alt="Avión en ícono" width="22px"> 5h 20 mins -------</div>
-                <div class="hora_ida">23:50</div>
+                <div class="tiempo">Duración: ${tiempo}</div>
+                <div class="hora_ida"></div>
                 <div class="texto_lugar_regreso"></div>
-                <div class="hora_regreso">05:10</div>
-                <div class="precio">$2.345.213 COP</div>
+                <div class="hora_regreso"></div>
+                <div class="precio"></div>
             </div>
-            <div class="contenedor_vuelo" onclick="cambiarColor(this, 'contenedor_5')">
+            <div class="contenedor_vuelo" onclick="seleccion_1(this, 'contenedor_vuelo_2')" id="contenedor_vuelo_2">
                 <div class="texto_lugar_ida"></div>
-                <div class="tiempo">------- <img src="../images/icono_avion.png" alt="Avión en ícono" width="22px"> 4h 40 mins -------</div>
-                <div class="hora_ida">11:30</div>
+                <div class="tiempo">Duración: ${tiempo}</div>
+                <div class="hora_ida"></div>
                 <div class="texto_lugar_regreso"></div>
-                <div class="hora_regreso">16:10</div>
-                <div class="precio">$2.408.200 COP</div>
+                <div class="hora_regreso"></div>
+                <div class="precio"></div>
             </div>
-            <div class="contenedor_vuelo" onclick="cambiarColor(this, 'contenedor_5')">
+            <div class="contenedor_vuelo" onclick="seleccion_1(this, 'contenedor_vuelo_3')" id="contenedor_vuelo_3">
                 <div class="texto_lugar_ida"></div>
-                <div class="tiempo">------- <img src="../images/icono_avion.png" alt="Avión en ícono" width="22px"> 4h 10 mins -------</div>
-                <div class="hora_ida">15:10</div>
+                <div class="tiempo">Duración: ${tiempo}</div>
+                <div class="hora_ida"></div>
                 <div class="texto_lugar_regreso"></div>
-                <div class="hora_regreso">19:20</div>
-                <div class="precio">$3.100.960 COP</div>
+                <div class="hora_regreso"></div>
+                <div class="precio"></div>
             </div>
-            <div class="contenedor_vuelo" onclick="cambiarColor(this, 'contenedor_5')">
+            <div class="contenedor_vuelo" onclick="seleccion_1(this, 'contenedor_vuelo_4')" id="contenedor_vuelo_4">
                 <div class="texto_lugar_ida"></div>
-                <div class="tiempo">------- <img src="../images/icono_avion.png" alt="Avión en ícono" width="22px"> 4h 10 mins -------</div>
-                <div class="hora_ida">17:40</div>
+                <div class="tiempo">Duración: ${tiempo}</div>
+                <div class="hora_ida"></div>
                 <div class="texto_lugar_regreso"></div>
-                <div class="hora_regreso">21:50</div>
-                <div class="precio">$3.100.960 COP</div>
+                <div class="hora_regreso"></div>
+                <div class="precio"></div>
             </div>
         </div>
         <div id="contenedor_5">
             <h2><div class="titulo">Seleccione vuelo de regreso</div></h2>
-            <div class="contenedor_vuelo" onclick="cambiarColor(this, 'contenedor_6')">
+            <div class="contenedor_vuelo" onclick="seleccion_2(this, 'contenedor_vuelo_5')" id="contenedor_vuelo_5">
                 <div class="texto_lugar_ida"></div>
-                <div class="tiempo">------- <img src="../images/icono_avion.png" alt="Avión en ícono" width="22px"> 5h 20 mins -------</div>
-                <div class="hora_ida">23:50</div>
+                <div class="tiempo">Duración: ${tiempo}</div>
+                <div class="hora_ida"></div>
                 <div class="texto_lugar_regreso"></div>
-                <div class="hora_regreso">05:10</div>
-                <div class="precio">$2.345.213 COP</div>
+                <div class="hora_regreso"></div>
+                <div class="precio"></div>
             </div>
-            <div class="contenedor_vuelo" onclick="cambiarColor(this, 'contenedor_6')">
+            <div class="contenedor_vuelo" onclick="seleccion_2(this, 'contenedor_vuelo_6')" id="contenedor_vuelo_6">
                 <div class="texto_lugar_ida"></div>
-                <div class="tiempo">------- <img src="../images/icono_avion.png" alt="Avión en ícono" width="22px"> 4h 40 mins -------</div>
-                <div class="hora_ida">11:30</div>
+                <div class="tiempo">Duración: ${tiempo}</div>
+                <div class="hora_ida"></div>
                 <div class="texto_lugar_regreso"></div>
-                <div class="hora_regreso">16:10</div>
-                <div class="precio">$2.408.200 COP</div>
+                <div class="hora_regreso"></div>
+                <div class="precio"></div>
             </div>
-            <div class="contenedor_vuelo" onclick="cambiarColor(this, 'contenedor_6')">
+            <div class="contenedor_vuelo" onclick="seleccion_2(this, 'contenedor_vuelo_7')" id="contenedor_vuelo_7">
                 <div class="texto_lugar_ida"></div>
-                <div class="tiempo">------- <img src="../images/icono_avion.png" alt="Avión en ícono" width="22px"> 4h 10 mins -------</div>
-                <div class="hora_ida">15:10</div>
+                <div class="tiempo">Duración: ${tiempo}</div>
+                <div class="hora_ida"></div>
                 <div class="texto_lugar_regreso"></div>
-                <div class="hora_regreso">19:20</div>
-                <div class="precio">$3.100.960 COP</div>
+                <div class="hora_regreso"></div>
+                <div class="precio"></div>
             </div>
-            <div class="contenedor_vuelo" onclick="cambiarColor(this, 'contenedor_6')">
+            <div class="contenedor_vuelo" onclick="seleccion_2(this, 'contenedor_vuelo_8')" id="contenedor_vuelo_8">
                 <div class="texto_lugar_ida"></div>
-                <div class="tiempo">------- <img src="../images/icono_avion.png" alt="Avión en ícono" width="22px"> 4h 10 mins -------</div>
-                <div class="hora_ida">17:40</div>
+                <div class="tiempo">Duración: ${tiempo}</div>
+                <div class="hora_ida"></div>
                 <div class="texto_lugar_regreso"></div>
-                <div class="hora_regreso">21:50</div>
-                <div class="precio">$3.100.960 COP</div>
+                <div class="hora_regreso"></div>
+                <div class="precio"></div>
             </div>
-            <div class="contenedor_vuelo" onclick="cambiarColor(this, 'contenedor_6')">
+            <div class="contenedor_vuelo" onclick="seleccion_2(this, 'contenedor_vuelo_9')" id="contenedor_vuelo_9">
                 <div class="texto_lugar_ida"></div>
-                <div class="tiempo">------- <img src="../images/icono_avion.png" alt="Avión en ícono" width="22px"> 4h 10 mins -------</div>
-                <div class="hora_ida">17:40</div>
+                <div class="tiempo">Duración: ${tiempo}</div>
+                <div class="hora_ida"></div>
                 <div class="texto_lugar_regreso"></div>
-                <div class="hora_regreso">21:50</div>
-                <div class="precio">$3.100.960 COP</div>
+                <div class="hora_regreso"> </div>
+                <div class="precio"></div>
             </div>
         </div>
         <div id="contenedor_6">
-            <button><a href="../pages/personalizacion.html">Siguiente</button>
+            <button onclick="Ir_personalizacion()">Siguiente</button>
         </div>
     </div>
   <script src="../js/seleccion.js" ></script>

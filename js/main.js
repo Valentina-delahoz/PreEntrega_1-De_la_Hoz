@@ -3,108 +3,25 @@ function Ir_seleccion() {
     const destino = document.getElementById('destino').value;
     const fecha_ida = document.getElementById('fecha_ida').value;
     const fecha_regreso = document.getElementById('fecha_regreso').value;
-    const numero_pasajeros = document.getElementById('numero_pasajeros').value;
     
     console.log(origen);
     console.log(destino);
     console.log(fecha_ida);
     console.log(fecha_regreso);
 
-    if (origen.trim() !== "" && destino.trim() !== "" && fecha_ida.trim() !== "" && numero_pasajeros.trim() !== "") {
+    if (origen.trim() !== "" && destino.trim() !== "" && fecha_ida.trim() !== "") {
         const formulario = document.getElementById('formulario');
         localStorage.setItem('origen', origen);
         localStorage.setItem('destino', destino);
         localStorage.setItem('fecha_ida', fecha_ida);
         localStorage.setItem('fecha_regreso', fecha_regreso);
-        localStorage.setItem('numero_pasajeros', numero_pasajeros);
         formulario.action = "http://127.0.0.1:5501/pages/seleccion.html";
         formulario.submit();
     } 
     else {}
 }
 /*
-//Compra de tiquete de un avión
-function resumen(callback) {
-    console.log("RESUMEN DE VUELO SELECCIONADO: ");
-    console.log(" ");
-    console.log("VUELO DE IDA");
-    console.log("Fecha: 18 de julio de 2023");
-    console.log("Aeropuerto El Dorado (BAQ) 17:15  -->  Aeropuerto de Cartagena (CAG) 19:45");
-    console.log("Aerolínea: Avianca");
-    console.log(" ");
-    console.log("VUELO DE REGRESO");
-    console.log("Fecha: 20 de julio de 2023");
-    console.log("Aeropuerto de Cartagena (CAG) 8:30 -->  Aeropuerto El Dorado (BAQ) 11:15");
-    console.log("Aerolínea: Vueling");
-    console.log(" ");
-    callback();
-    console.log("_____________________________________________");
-    console.log(" ");
-}
 
-//Número de pasajeros
-function obtener_cantidad_pasajeros() {
-    let repeticion = true;
-    let cantidadPasajeros;
-    while (repeticion) {
-        cantidadPasajeros = Number(prompt("Ingrese número de pasajeros"));
-        if (isNaN(cantidadPasajeros)) {
-            alert("Ese no es un número válido");
-            repeticion = true;
-        } 
-        else {
-        repeticion = false;
-        }
-    }
-    return cantidadPasajeros;
-}
-
-//Datos de los pasajeros
-function datos_pasajeros(numero_pasajeros) {
-    console.log("RESUMEN DE PASAJEROS");
-    console.log(" ");
-    const nombres_pasajeros = [];  //array, lista de nombres
-    class Pasajero {
-        constructor() {
-            this.nombre = prompt("Ingrese nombre(s) del pasajero");
-            this.apellido = prompt("Ingrese apellido(s) del pasajero");
-            nombres_pasajeros.push(this.nombre + " " + this.apellido);
-            let tipo_identidad;
-            let repeticion = true;
-            while (repeticion) {
-                tipo_identidad = Number(prompt("Identificación del pasajero (1. DNI) (2. Pasaporte)"));
-                switch (tipo_identidad) {
-                    case 1:
-                    this.identidad = prompt("Ingrese DNI del pasajero");
-                    this.tipo = "DNI " ;
-                    repeticion = false;
-                    break;
-                    
-                    case 2:
-                    this.identidad = prompt("Ingrese pasaporte del pasajero");
-                    this.tipo = "Pasaporte " ;
-                    repeticion = false;
-                    break;
-                    
-                    default:
-                    alert("Esta no es una opción válida");
-                }
-            }
-            this.telefono = prompt("Ingrese teléfono de contacto del pasajero");
-        }
-    }
-    for (let contador = 1; contador <= numero_pasajeros; contador++) {
-        console.log("Pasajero " + contador);
-        const pasajero = new Pasajero();
-        console.log("   * Nombre(s): " + pasajero.nombre);
-        console.log("   * Apellido(s): " + pasajero.apellido);
-        console.log("   * Identificación: " + pasajero.tipo + pasajero.identidad);
-        console.log("   * Teléfono: " + pasajero.telefono);
-        console.log("_____________________________________________");
-        console.log(" ");
-    }
-    return nombres_pasajeros;
-}
 
 //Factura electrónica
 function factura_electronica(numero_pasajeros) {

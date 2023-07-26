@@ -10,15 +10,15 @@
 <body>
     <form id="formulario">
         <div id="contenedor_1">
-            <div class="texto">Lugar</div>
-            <input type="text" id="origen" placeholder="   ¿De dónde vienes?" required>
-            <input type="text" id="destino" placeholder="   ¿A dónde vas?" required>
+            <div class="titulo">¡Bienvenido a Air-Dream!</div>
+            <div class="texto">Origen</div>
+            <input type="text" id="origen" required>
+            <div class="texto">Destino</div>
+            <input type="text" id="destino" required>
             <div class="texto">Fecha de ida</div>
             <input type="date" id="fecha_ida" required>
             <div class="texto">Fecha de regreso</div>
             <input type="date" id="fecha_regreso" required>
-            <div class="texto">Número de pasajeros</div>
-            <input type="number" id="numero_pasajeros" min="1" step="1" required>
             <button onclick="Ir_seleccion()">Buscar vuelo</button>
         </div>
     </form>

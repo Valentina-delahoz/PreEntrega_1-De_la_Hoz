@@ -25,12 +25,13 @@ body{
 #formulario button, 
 #formulario input[type="number"] {
     width: 100%;
-    height: 40px;
-    margin-top: 10px;
+    margin-top: 5px;
     border: none;
     border-radius: 10px;
     background-color: white;
-    color: grey;
+    color: #3d3c3c;
+    padding: 10px;
+    font-size: medium;
 }
 #formulario #contenedor_1 .texto{
     font-family: Arial, sans-serif;
@@ -43,6 +44,10 @@ body{
     color: white;
     cursor: pointer;
 } 
+#formulario button:hover {
+    background-color: #fca020;
+    color: #3d3c3c;
+} 
 #resultados {
     margin-top: 20px;
 }
@@ -51,6 +56,13 @@ body{
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     margin-bottom: 10px;
+}
+#formulario #contenedor_1 .titulo{
+    font-family: Arial, sans-serif;
+    color: #3d3c3c;
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 30px;
 }
 
 /* Seleccion */
@@ -83,6 +95,10 @@ body{
   }
 .nav-list li a.activado:hover {
   background-color: #ccc;
+}
+.icono-avion {
+    position: relative;
+    z-index: 2;
 }
 #contenedor_3{
     width: 100%;
@@ -192,9 +208,145 @@ body{
     width: 30%;
     
 }
-#contenedor_3 #contenedor_6 button a{
+#contenedor_3 #contenedor_6 button{
     font-family: Arial, sans-serif;
-    color: #3d3c3c;
+    background-color: #f96c00;
+    color: #f9f9f9;
     text-decoration: none;
     font-size: large;
+}
+#contenedor_3 #contenedor_6 button:hover{
+    background-color: #fca020;
+    color: #3d3c3c;
+}
+
+/* Personalización */
+.contenido {
+    padding: 50px;
+}
+
+.info_pie_pagina {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f96c00;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+.resumen_detalles_vuelo, .resumen_precio {
+    text-align: center;
+    width: 50%;
+    padding: 20px;
+}
+
+.redes_sociales ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.redes_sociales li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.redes_sociales a {
+    color: white;
+    text-decoration: none;
+}
+
+.redes_sociales a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos generales para el formulario */
+#contenedor_datos_pasajeros{
+    background-color: rgba(204, 204, 204, 0.5);
+    padding: 10px;
+}
+    
+form {
+    width: 70%;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Estilos para los labels */
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #3d3c3c;
+  }
+  
+  /* Estilos para los campos de entrada de texto y selección */
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="tel"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  /* Estilos para el botón de enviar */
+  .contenedor_boton{
+    display: flex;
+    justify-content: center;
+  }
+  .contenedor_boton button[type="submit"] {
+    width: 50%;
+    padding: 10px;
+    background-color: #f96c00;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  button[type="submit"]:hover {
+    background-color: #fca020;
+  }
+
+.contenedor_opciones {
+    display: flex;
+    justify-content: center;
+    background-color: rgba(204, 204, 204, 0.5);
+    padding: 40px;
+    margin-bottom: 200px;
+}
+
+.box_1, .box_2, .box_3 {
+    width: 22%;
+    height: 300px;
+    background-color: #fff;
+    margin: 20px;
+    border-radius: 8px;
+}
+.box_1 img, .box_2 img{
+    margin-left: 50px;
+    margin-top: 20px;
+}
+.box_3 img{
+    margin-left: 80px;
+    margin-top: 20px;
+    width: 96px;
+}
+.contenedor_opciones .descripcion, .contenedor_opciones .precio{
+    color:#3d3c3c;
+    text-align: center;
+    padding: 7px;
 }
