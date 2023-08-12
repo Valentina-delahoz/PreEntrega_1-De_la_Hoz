@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <title>Air Dream - Pago</title>
 </head>
@@ -15,6 +17,38 @@
       <li><a class="activado" href="../pages/pago.html">3. Pago</a></li>
     </ul>
   </nav>
-  <script src="../js/main.js" ></script>
+  <div id="contenedor_3">
+    <div id="contenedor_4">
+        <h2><div class="titulo">¡Falta poco, <span class="nombre_pasajero"></span>!</div></h2>
+        <div id="contenedor_datos_pago">
+            <form id="datos_pasajero_pago">
+                <label for="numero_tarjeta">Número de la tarjeta:</label>
+                <input type="text" id="numero_tarjeta" required>
+                <img class="tarjetas" src="../images/tarjetas.png" alt="Simbolo de tarjetas más usadas en Colombia">
+                <label for="vencimiento_tarjeta">Fecha de vencimiento:</label>
+                <input type="date" id="vencimiento_tarjeta" required>
+                <label for="nombre_titular">Nombre del titular:</label>
+                <input type="text" id="nombre_titular" required>
+                <label for="correo_titular">Correo electrónico de contacto:</label>
+                <input type="text" id="correo_titular" required>
+                <label for="numero_cuotas">Número de cuotas:</label>
+                <select id="numero_cuotas" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <div class="contenedor_boton_guardado"><button type="submit">Pagar</button></div>
+            </form>
+        </div>
+    </div>
+  </div>
+  <script src="../js/pago.js" ></script>
 </body>
 </html>

@@ -92,11 +92,7 @@ function Ir_personalizacion() {
     const divSeleccionadoDataJSON_2 = localStorage.getItem('divSeleccionadoData_2');
     const divSeleccionadoData_2 = JSON.parse(divSeleccionadoDataJSON_2);
   
-    if (divSeleccionadoId_1 && divSeleccionadoData_1 && divSeleccionadoId_2 && divSeleccionadoData_2) {
-      window.location.href = "http://127.0.0.1:5501/pages/personalizacion.html";
-    } else {
-      mostrarSweetAlert();
-    }
+    divSeleccionadoId_1 && divSeleccionadoData_1 && divSeleccionadoId_2 && divSeleccionadoData_2 ? window.location.href = "http://127.0.0.1:5501/pages/personalizacion.html": mostrarSweetAlert()
   }
 
 //Información con la que toman los datos los contenedores de vuelo:
@@ -146,15 +142,15 @@ for (let i = 0; i < hora_regreso.length; i++) {
 hora_regreso[i].textContent = datos_vuelo_hora_regreso[i].hora_regreso;
 }
 const datos_vuelo_precio = [
-    { precio: "2345213 COP" },
-    { precio: "2408200 COP" },
-    { precio: "3100960 COP" },
-    { precio: "3100960 COP" },
-    { precio: "2345213 COP" },
-    { precio: "2408200 COP" },
-    { precio: "3100960 COP" },
-    { precio: "3100960 COP" },
-    { precio: "3200960 COP" }
+    { precio: "$2345213 COP" },
+    { precio: "$2408200 COP" },
+    { precio: "$3100960 COP" },
+    { precio: "$3100960 COP" },
+    { precio: "$2345213 COP" },
+    { precio: "$2408200 COP" },
+    { precio: "$3100960 COP" },
+    { precio: "$3100960 COP" },
+    { precio: "$3200960 COP" }
   ];
 const precio = document.getElementsByClassName("precio");
 for (let i = 0; i < precio.length; i++) {

@@ -205,8 +205,6 @@ body{
     border-radius: 50px;
     margin-top: 30px;
     margin-bottom: 30px;
-    width: 30%;
-    
 }
 #contenedor_3 #contenedor_6 button{
     font-family: Arial, sans-serif;
@@ -234,6 +232,7 @@ body{
     display: flex;
     justify-content: space-between;
     padding-bottom: 20px;
+    box-shadow: 0px -5px 5px rgba(0, 0, 0, 0.3);
 }
 .resumen_detalles_vuelo {
     text-align: center;
@@ -263,11 +262,11 @@ body{
     font-size: x-large;
     font-weight: bold;;
 }
-#contenedor_datos_pasajeros{
+#contenedor_datos_pasajeros , #contenedor_datos_pago{
     background-color: rgba(204, 204, 204, 0.5);
     padding: 10px;
 }
-form {
+form, #contenedor_datos_pago form{
     width: 70%;
     margin: 0 auto;
     padding: 30px;
@@ -281,8 +280,15 @@ label {
     font-weight: bold;
     color: #3d3c3c;
 }
-input[type="text"], select {
+input[type="text"]{
     width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+select {
+    width: 102%;
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -299,16 +305,7 @@ input[type="tel"] {
     display: flex;
     justify-content: center;
 }
-.contenedor_boton button[type="submit"] {
-    width: 50%;
-    padding: 10px;
-    background-color: #f96c00;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-.contenedor_boton_guardado button[type="submit"] {
+.contenedor_boton button[type="submit"], .contenedor_boton_guardado button[type="submit"] {
     width: 50%;
     padding: 10px;
     background-color: #f96c00;
@@ -325,7 +322,6 @@ button[type="submit"]:hover {
     justify-content: center;
     background-color: rgba(204, 204, 204, 0.5);
     padding: 40px;
-    margin-bottom: 200px;
 }
 .box_1, .box_2, .box_3 {
     width: 22%;
@@ -347,5 +343,41 @@ button[type="submit"]:hover {
     color:#3d3c3c;
     text-align: center;
     padding: 7px;
+}
+#contenedor_7{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 300px;
+}
+#contenedor_7 .siguiente_pago{
+    width: 40%;
+    padding: 10px;
+    background-color: #fff;
+    color: #f96c00;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+}
+#contenedor_7 .siguiente_pago:hover {
+    background-color: #fca020;
+    color:#fff
+}
+
+/* Pago */
+#contenedor_datos_pago input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+#contenedor_datos_pago{
+    margin-bottom: 30px;
+}
+img .tarjetas{
+    width: 350000px;
 }
 

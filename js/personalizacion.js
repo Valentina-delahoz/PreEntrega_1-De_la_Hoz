@@ -8,19 +8,13 @@ document.getElementById('datos_pasajeros').addEventListener('submit', function(e
     const identidad_pasajero = document.getElementById('identidad_pasajero').value;
     const telefono = document.getElementById('telefono').value;
 
-    // Creao un objeto con los datos
-    const datos = {
-        nombre_pasajero,
-        apellido_pasajero,
-        tipo_identidad,
-        identidad_pasajero,
-        telefono
-    };
-    console.log(datos);
-    const datosJSON = JSON.stringify(datos);
-    localStorage.setItem('datos', datosJSON);
+    // Añado los datos al localstorage
+    localStorage.setItem('nombre_pasajero', nombre_pasajero);
+    localStorage.setItem('apellido_pasajero', apellido_pasajero);
+    localStorage.setItem('tipo_identidad', tipo_identidad);
+    localStorage.setItem('identidad_pasajero', identidad_pasajero);
+    localStorage.setItem('telefono', telefono);
     mostrarSweetAlert2();
-
 });
 function mostrarSweetAlert2() {
     Swal.fire('Sus datos personales se han guardado con éxito.');
@@ -116,9 +110,10 @@ botonesAñadir.forEach((boton, index) => {
 // Actualizo la visualización inicial del precio total en la página
 totalElemento.textContent = `$${totalPrecio.toFixed(2)} COP`;
 
-//será que le agrego un boton de seguir? Buscar info acerca de como hacer para que al scrollear hacia abajo, vayan aparecinedo lentamente las cosas
-
-
+// Función para ir a la sección de pago
+function Ir_pago() {
+    window.location.href = "http://127.0.0.1:5501/pages/pago.html";
+  }
 
 
 
