@@ -1,11 +1,13 @@
 
 // Tomo los datos de origen y destino, almaceno y guardo con capitalización.
-function mostrarSweetAlert() {
-    Swal.fire({
-    title: 'Debe seleccionar ambos vuelos antes de continuar',
-    icon: 'error',
-    showConfirmButton: true});
-}
+const mostrarSweetAlert = () => {
+  Swal.fire({
+      title: 'Debe seleccionar ambos vuelos antes de continuar',
+      icon: 'error',
+      showConfirmButton: true
+  });
+};
+
 document.addEventListener('DOMContentLoaded', function() {
     const origen = localStorage.getItem('origen');
     const destino = localStorage.getItem('destino');
@@ -100,62 +102,65 @@ function Ir_personalizacion() {
 
 //Información con la que toman los datos los contenedores de vuelo:
 const datos_vuelo_tiempo = [
-    { tiempo: "5h 20 mins" },
-    { tiempo: "4h 40 mins" },
-    { tiempo: "4h 10 mins" },
-    { tiempo: "4h 10 mins" },
-    { tiempo: "5h 20 mins" },
-    { tiempo: "4h 40 mins" },
-    { tiempo: "4h 10 mins" },
-    { tiempo: "4h 10 mins" },
-    { tiempo: "4h 10 mins" }
-  ];
-const tiempo = document.getElementsByClassName("tiempo");
-for (let i = 0; i < tiempo.length; i++) {
-tiempo[i].textContent = datos_vuelo_tiempo[i].tiempo;
-}
+  { tiempo: "5h 20 mins" },
+  { tiempo: "4h 40 mins" },
+  { tiempo: "4h 10 mins" },
+  { tiempo: "4h 12 mins" },
+  { tiempo: "5h 20 mins" },
+  { tiempo: "4h 40 mins" },
+  { tiempo: "4h 13 mins" },
+  { tiempo: "4h 16 mins" },
+  { tiempo: "4h 18 mins" }
+];
+const tiempoElements = document.querySelectorAll(".tiempo");
+tiempoElements.forEach((element, index) => {
+  element.textContent = datos_vuelo_tiempo[index].tiempo;
+});
+
 const datos_vuelo_hora_ida = [
-    { hora_ida: "23:50" },
-    { hora_ida: "11:30" },
-    { hora_ida: "15:10" },
-    { hora_ida: "17:40" },
-    { hora_ida: "23:50" },
-    { hora_ida: "11:30" },
-    { hora_ida: "15:10" },
-    { hora_ida: "17:40" },
-    { hora_ida: "17:40" }
-  ];
-const hora_ida = document.getElementsByClassName("hora_ida");
-for (let i = 0; i < hora_ida.length; i++) {
-hora_ida[i].textContent = datos_vuelo_hora_ida[i].hora_ida;
-}
+  { hora_ida: "23:50" },
+  { hora_ida: "11:30" },
+  { hora_ida: "15:10" },
+  { hora_ida: "17:40" },
+  { hora_ida: "23:50" },
+  { hora_ida: "11:30" },
+  { hora_ida: "15:10" },
+  { hora_ida: "17:40" },
+  { hora_ida: "17:40" }
+];
+const horaIdaElements = document.querySelectorAll(".hora_ida");
+horaIdaElements.forEach((element, index) => {
+  element.textContent = datos_vuelo_hora_ida[index].hora_ida;
+});
+
 const datos_vuelo_hora_regreso = [
-    { hora_regreso: "05:10" },
-    { hora_regreso: "16:10" },
-    { hora_regreso: "19:20" },
-    { hora_regreso: "21:50" },
-    { hora_regreso: "05:10" },
-    { hora_regreso: "16:10" },
-    { hora_regreso: "19:20" },
-    { hora_regreso: "21:50" },
-    { hora_regreso: "21:50" }
-  ];
-const hora_regreso = document.getElementsByClassName("hora_regreso");
-for (let i = 0; i < hora_regreso.length; i++) {
-hora_regreso[i].textContent = datos_vuelo_hora_regreso[i].hora_regreso;
-}
+  { hora_regreso: "05:10" },
+  { hora_regreso: "16:10" },
+  { hora_regreso: "19:20" },
+  { hora_regreso: "21:50" },
+  { hora_regreso: "05:10" },
+  { hora_regreso: "16:10" },
+  { hora_regreso: "19:20" },
+  { hora_regreso: "21:50" },
+  { hora_regreso: "21:50" }
+];
+const horaRegresoElements = document.querySelectorAll(".hora_regreso");
+horaRegresoElements.forEach((element, index) => {
+  element.textContent = datos_vuelo_hora_regreso[index].hora_regreso;
+});
+
 const datos_vuelo_precio = [
-    { precio: "$2345213 COP" },
-    { precio: "$2408200 COP" },
-    { precio: "$3100960 COP" },
-    { precio: "$3100960 COP" },
-    { precio: "$2345213 COP" },
-    { precio: "$2408200 COP" },
-    { precio: "$3100960 COP" },
-    { precio: "$3100960 COP" },
-    { precio: "$3200960 COP" }
-  ];
-const precio = document.getElementsByClassName("precio");
-for (let i = 0; i < precio.length; i++) {
-    precio[i].textContent = datos_vuelo_precio[i].precio;
-}
+  { precio: "$2345213 COP" },
+  { precio: "$2408200 COP" },
+  { precio: "$3100960 COP" },
+  { precio: "$3100960 COP" },
+  { precio: "$2345213 COP" },
+  { precio: "$2408200 COP" },
+  { precio: "$3100960 COP" },
+  { precio: "$3100960 COP" },
+  { precio: "$3200960 COP" }
+];
+const precioElements = document.querySelectorAll(".precio");
+precioElements.forEach((element, index) => {
+  element.textContent = datos_vuelo_precio[index].precio;
+});

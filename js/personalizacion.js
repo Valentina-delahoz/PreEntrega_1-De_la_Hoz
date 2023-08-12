@@ -16,9 +16,9 @@ document.getElementById('datos_pasajeros').addEventListener('submit', function(e
     localStorage.setItem('telefono', telefono);
     mostrarSweetAlert2();
 });
-function mostrarSweetAlert2() {
+const mostrarSweetAlert2 = () => {
     Swal.fire('Sus datos personales se han guardado con éxito.');
-}
+};
 
 // Obtengo los datos del localStorage y los convierto de JSON a objeto
 const divSeleccionadoDataJSON_1 = localStorage.getItem('divSeleccionadoData_1');

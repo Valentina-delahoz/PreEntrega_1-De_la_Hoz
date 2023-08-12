@@ -1,33 +1,28 @@
-// Obtengo los datos del localStorage y los convierto de JSON a objeto
-document.addEventListener("DOMContentLoaded", function() {
-
-    // Obtengo los elementos del local storage
-    const nombrePasajero = localStorage.getItem('nombre_pasajero');
-    
-    // Asigna los valores al elemento HTML
-    const nombreSpan = document.querySelector('.nombre_pasajero');
-    nombreSpan.textContent = nombrePasajero;
-});
-
-//Contador de tiempo - 5 mins
 document.addEventListener('DOMContentLoaded', function() {
+    const nombreSpan = document.querySelector('.nombre_pasajero');
     const contadorElemento = document.getElementById('contador');
     let tiempoRestante = 1.5 * 60;
 
+    // Obtengo los elementos del local storage
+    const nombrePasajero = localStorage.getItem('nombre_pasajero');
+    nombreSpan.textContent = nombrePasajero;
+
+    // Contador de tiempo - 5 mins
     const intervalo = setInterval(function() {
         const minutos = Math.floor(tiempoRestante / 60);
         const segundos = tiempoRestante % 60;
         contadorElemento.textContent = `${minutos}:${segundos < 10 ? '0' : ''}${segundos}`;
         tiempoRestante--;
 
-        if (tiempoRestante < 0) {
-            clearInterval(intervalo);
-            contadorElemento.textContent = '00:00';
-            mostrarSweetAlert23();
-        }
+        (tiempoRestante < 0) && (
+            clearInterval(intervalo),
+            contadorElemento.textContent = '00:00',
+            mostrarSweetAlert23()
+        );
     }, 1000);
 });
-function mostrarSweetAlert23() {
+
+const mostrarSweetAlert23 = () => {
     Swal.fire({
         title: 'Tiempo agotado',
         text: 'El tiempo límite se ha agotado.',
@@ -35,23 +30,18 @@ function mostrarSweetAlert23() {
         timer: 2000,
         timerProgressBar: true,
         showConfirmButton: false
-    }).then(() => {
-        location.reload(); // Refresca la página
-    });
-}
-setTimeout(mostrarSweetAlert23, tiempoRestante);
+    }).then(() => location.reload());
+};
 
-
-// Boton de procesamiento de pago y guardado de informacion
 document.getElementById('datos_pasajero_pago').addEventListener('submit', function(event) {
     event.preventDefault();
-
+    
     Swal.fire({
         title: 'Procesando pago...',
         showConfirmButton: false,
         allowOutsideClick: false,
         showLoaderOnConfirm: true,
-      });
+    });
 
     // Obtengo los datos ingresados en el formulario
     const numero_tarjeta = document.getElementById('numero_tarjeta').value;
@@ -67,18 +57,22 @@ document.getElementById('datos_pasajero_pago').addEventListener('submit', functi
     localStorage.setItem('correo_titular', correo_titular);
     localStorage.setItem('numero_cuotas', numero_cuotas);
 
-      // Término de guardado
-      setTimeout(function() {
-        Swal.fire({
-            title: 'Pago realizado con éxito',
-            icon: 'success',
-            timer: 4000,
-            timerProgressBar: true,
-            showConfirmButton: false
-        });
-    
-        setTimeout(function() {
-            window.location.href = "http://127.0.0.1:5501/pages/reserva.html";
-        }, 4000);
+    // Término de guardado
+    setTimeout(function() {
+        mostrarSweetAlertPagoExitoso();
     }, 3000);
 });
+
+const mostrarSweetAlertPagoExitoso = () => {
+    Swal.fire({
+        title: 'Pago realizado con éxito',
+        icon: 'success',
+        timer: 4000,
+        timerProgressBar: true,
+        showConfirmButton: false
+    });
+
+    setTimeout(() => {
+        window.location.href = 'http://127.0.0.1:5501/pages/reserva.html';
+    }, 4000);
+};
