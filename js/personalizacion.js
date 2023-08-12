@@ -112,7 +112,7 @@ totalElemento.textContent = `$${totalPrecio.toFixed(2)} COP`;
 
 // Función para ir a la sección de pago
 function Ir_pago() {
-    window.location.href = "http://127.0.0.1:5501/pages/pago.html";
+    window.location.href = "https://valentina-delahoz.github.io/ProyectoFinal-De_la_Hoz/pages/pago.html";
   }
 
 

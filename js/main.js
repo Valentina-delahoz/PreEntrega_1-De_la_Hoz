@@ -50,7 +50,7 @@ function Ir_seleccion() {
         localStorage.setItem('destino', destino);
         localStorage.setItem('fecha_ida', fecha_ida);
         localStorage.setItem('fecha_regreso', fecha_regreso);
-        formulario.action = "http://127.0.0.1:5501/pages/seleccion.html";
+        formulario.action = "https://valentina-delahoz.github.io/ProyectoFinal-De_la_Hoz/pages/seleccion.html";
         formulario.submit();
     } 
     else {console.log("Por favor completa todos los campos.");}

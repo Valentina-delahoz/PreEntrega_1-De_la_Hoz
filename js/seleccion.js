@@ -97,7 +97,7 @@ function Ir_personalizacion() {
     const divSeleccionadoDataJSON_2 = localStorage.getItem('divSeleccionadoData_2');
     const divSeleccionadoData_2 = JSON.parse(divSeleccionadoDataJSON_2);
   
-    divSeleccionadoId_1 && divSeleccionadoData_1 && divSeleccionadoId_2 && divSeleccionadoData_2 ? window.location.href = "http://127.0.0.1:5501/pages/personalizacion.html": mostrarSweetAlert()
+    divSeleccionadoId_1 && divSeleccionadoData_1 && divSeleccionadoId_2 && divSeleccionadoData_2 ? window.location.href = "https://valentina-delahoz.github.io/ProyectoFinal-De_la_Hoz/pages/personalizacion.html": mostrarSweetAlert()
   }
 
 //Información con la que toman los datos los contenedores de vuelo:

@@ -73,6 +73,6 @@ const mostrarSweetAlertPagoExitoso = () => {
     });
 
     setTimeout(() => {
-        window.location.href = 'http://127.0.0.1:5501/pages/reserva.html';
+        window.location.href = 'https://valentina-delahoz.github.io/ProyectoFinal-De_la_Hoz/pages/reserva.html';
     }, 4000);
 };
