@@ -36,11 +36,15 @@ document.getElementById('datos_pasajero_pago').addEventListener('submit', functi
       // Término de guardado
       setTimeout(function() {
         Swal.fire({
-          title: 'Pago realizado con éxito',
-          icon: 'success',
-          timer: 4000,
-          timerProgressBar: true,
-          showConfirmButton: false
+            title: 'Pago realizado con éxito',
+            icon: 'success',
+            timer: 4000,
+            timerProgressBar: true,
+            showConfirmButton: false
         });
-      }, 3000);
+    
+        setTimeout(function() {
+            window.location.href = "http://127.0.0.1:5501/pages/reserva.html";
+        }, 4000);
+    }, 3000);
 });
