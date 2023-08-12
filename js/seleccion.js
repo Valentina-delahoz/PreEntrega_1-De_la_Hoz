@@ -1,7 +1,10 @@
 
 // Tomo los datos de origen y destino, almaceno y guardo con capitalización.
 function mostrarSweetAlert() {
-    Swal.fire('Debe seleccionar ambos vuelos antes de continuar.');
+    Swal.fire({
+    title: 'Debe seleccionar ambos vuelos antes de continuar',
+    icon: 'error',
+    showConfirmButton: true});
 }
 document.addEventListener('DOMContentLoaded', function() {
     const origen = localStorage.getItem('origen');

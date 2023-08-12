@@ -2,8 +2,8 @@ function Ir_seleccion() {
     localStorage.clear();
     const origen = document.getElementById('origen').value;
     const destino = document.getElementById('destino').value;
-    const fecha_ida = document.getElementById('fecha_ida').value;
-    const fecha_regreso = document.getElementById('fecha_regreso').value;
+    const fecha_ida = luxon.DateTime.DATE_MEDfromFormat(document.getElementById('fecha_ida').value, 'yyyy-MM-dd').toISO();
+    const fecha_regreso = luxon.DateTime.fromFormat(document.getElementById('fecha_regreso').value, 'yyyy-MM-dd').toISO();
     
     console.log(origen);
     console.log(destino);

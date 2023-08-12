@@ -385,6 +385,20 @@ button[type="submit"]:hover {
     margin-top: -10px;
     margin-left: -15px;
 }
+.tiempo{
+    margin-top: 15px;
+    color: #fff;
+    font-size: medium;
+    font-weight: 200;
+}
+#contador{
+    margin-top: 10px;
+    font-size: large;
+    margin-bottom: -20px;
+    font-weight: 900;
+    color: #fff;
+    margin-left: 40px;
+}
 
 /*Reserva*/
 body .contenedor_10{
@@ -443,6 +457,9 @@ body .contenedor_10{
 }
 .button-container button:hover {
     background-color: #c0392b;
+}
+.swal2-styled.swal2-confirm {
+    background-color: #f96c00;
 }
   
   
